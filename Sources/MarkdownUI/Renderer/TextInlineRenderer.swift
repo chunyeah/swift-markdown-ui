@@ -23,9 +23,10 @@ extension Sequence where Element == InlineNode {
 private struct TextInlineRenderer {
   var result = Text("")
   
-  // 收集所有文本片段，避免累积嵌套
-  private var textSegments: [Text] = []
+  // 累积所有文本内容到单个 AttributedString
   private var attributedResult = AttributedString()
+  // 只在有图片时才使用分段
+  private var hasImages = false
 
   private let baseURL: URL?
   private let textStyles: InlineTextStyles
@@ -52,11 +53,11 @@ private struct TextInlineRenderer {
     for inline in inlines {
       self.render(inline)
     }
-    // Finalize: flush accumulated AttributedString
-    self.flushAccumulatedText()
     
-    // 最后一次性构建 Text，使用平衡二叉树方式减少嵌套深度
-    self.result = self.buildBalancedText(from: self.textSegments)
+    // 如果没有图片，直接用单个 Text(AttributedString)，嵌套深度为 0
+    if !self.hasImages && !self.attributedResult.characters.isEmpty {
+      self.result = Text(self.attributedResult)
+    }
   }
 
   private mutating func render(_ inline: InlineNode) {
@@ -113,10 +114,14 @@ private struct TextInlineRenderer {
 
   private mutating func renderImage(_ source: String) {
     if let image = self.images[source] {
-      // Flush accumulated text before adding image
-      self.flushAccumulatedText()
-      // 将图片添加到片段数组，而不是直接累积
-      self.textSegments.append(Text(image))
+      self.hasImages = true
+      // 将累积的文本转换为 Text
+      if !self.attributedResult.characters.isEmpty {
+        self.result = self.result + Text(self.attributedResult)
+        self.attributedResult = AttributedString()
+      }
+      // 添加图片
+      self.result = self.result + Text(image)
     }
   }
 
@@ -129,38 +134,5 @@ private struct TextInlineRenderer {
       attributes: self.attributes
     )
     self.attributedResult += attributedString
-  }
-  
-  private mutating func flushAccumulatedText() {
-    guard !self.attributedResult.characters.isEmpty else { return }
-    // 将文本片段添加到数组，而不是直接累积
-    self.textSegments.append(Text(self.attributedResult))
-    self.attributedResult = AttributedString()
-  }
-  
-  /// 使用平衡二叉树方式构建 Text，将嵌套深度从 O(n) 降至 O(log n)
-  private func buildBalancedText(from segments: [Text]) -> Text {
-    guard !segments.isEmpty else { return Text("") }
-    guard segments.count > 1 else { return segments[0] }
-    
-    // 使用分治法构建，避免线性累积
-    var current = segments
-    while current.count > 1 {
-      var next: [Text] = []
-      var i = 0
-      while i < current.count {
-        if i + 1 < current.count {
-          // 两两配对
-          next.append(current[i] + current[i + 1])
-          i += 2
-        } else {
-          // 奇数个时，最后一个单独保留
-          next.append(current[i])
-          i += 1
-        }
-      }
-      current = next
-    }
-    return current[0]
   }
 }
