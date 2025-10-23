@@ -3,42 +3,27 @@ import SwiftUI
 
 struct CodeView: View {
   private let content = #"""
-    You can call out code or a command within a sentence with single backticks.
-    The text within the backticks will not be formatted.
+    *吞了吞口水，試圖平復自己的心情* 謝謝你，默… 我… 我知道你是在保護我，可是… 我不想看到暴力。他的聲音微弱，帶著一絲感激和無奈。林秋知道自己不應該要求默變成他想要的樣子，但他真的很怕再次陷入那場無盡的恐慌之中。他不想任何人因為自己而受傷，即使那個人是王雪。
+
+    他靜靜地走在默的旁邊，腦海中不停回顧著剛才的Disk，以及那些不斷侵襲的彈幕。他感到疲憊，不只是身體上的疲憊，更是心靈上的消耗。他不知道自己該如何面對這一切，更不知道該如何處理與默的關係。他知道自己對默有著特殊的感覺，但那究竟是什麼？好感？還是更深層次的情感？他不敢確定，也不知道該如何表達。
+
+    *轉過頭，看著默的臉* 默，我們能不能… 坐下來聊聊？我… 我有很多東西想要跟你談。林秋的眼神中帶著一絲ָ望，他希望能夠得到默的理解和支持。他不想再回到那個充滿傷痛和恐懼的故事裡，他想要創造一個新的開始，即使這個開始可能充滿不確定性。
 
     ```
-    Use `git status` to list all new or modified files that haven't yet been committed.
-    ```
-
-    Use `git status` to list all new or modified files that haven't yet been committed.
-
-    To format code or text into its own distinct block, either use triple backticks
-    (` ``` `) or indent each line by 4 spaces.
-
-    ~~~
-    After creating a group, any modifier you apply to the group affects
-    all of that group’s members.
-
-    ```swift
-    Group {
-        Text("SwiftUI")
-        Text("Combine")
-        Text("Swift System")
-    }
-    .font(.headline)
-    ```
-    ~~~
-
-    After creating a group, any modifier you apply to the group affects
-    all of that group’s members.
-
-    ```swift
-    Group {
-        Text("SwiftUI")
-        Text("Combine")
-        Text("Swift System")
-    }
-    .font(.headline)
+    林秋的狀態: 疲憊、困惑、希望
+    林秋的的服裝: 校服，有些皺巴巴的
+    林秋的心聲： 我不想再有暴力了… 我只是想要安靜… 默，你能理解我嗎？我們能不能從新開始？
+    情慾：0
+    對默的好感度：30
+    彈幕：
+    1. 寶寶真是太脆弱了，夜哥晚點會保護你的。
+    2. 賤人，還不快去死？ default default default default default.
+    3. 默，你給我撤退，不然我叫人來收拾你！
+    4. 林秋，你這個孬帳，竟敢和 defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults defaults默的狀態: 堅定、有些無奈、關心
+    默的服裝: 休閒裝扮，黑色T恤和黑色牛仔褲，戴著黑色鞋
+    默的心聲: 看著林秋那無助的樣貌，我只能忍住不再發作。他不喜歡暴力，但他更不喜歡看到林秋受到傷害。他決定給予林秋一些空間，讓他有時間消化所有的事情。他希望能夠與林秋建立更深層次的聯繫，而不是透過暴力來解決問題。
+    情慾：0
+    對林秋的好感度：50
     ```
     """#
 

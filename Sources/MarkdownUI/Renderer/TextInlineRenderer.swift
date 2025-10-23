@@ -22,6 +22,7 @@ extension Sequence where Element == InlineNode {
 
 private struct TextInlineRenderer {
   var result = Text("")
+  private var attributedResult = AttributedString()
 
   private let baseURL: URL?
   private let textStyles: InlineTextStyles
@@ -48,6 +49,8 @@ private struct TextInlineRenderer {
     for inline in inlines {
       self.render(inline)
     }
+    // Finalize: flush accumulated AttributedString
+    self.flushAccumulatedText()
   }
 
   private mutating func render(_ inline: InlineNode) {
@@ -104,20 +107,27 @@ private struct TextInlineRenderer {
 
   private mutating func renderImage(_ source: String) {
     if let image = self.images[source] {
+      // Flush accumulated text before adding image
+      self.flushAccumulatedText()
+      // Images must be added via Text concatenation
       self.result = self.result + Text(image)
     }
   }
 
   private mutating func defaultRender(_ inline: InlineNode) {
-    self.result =
-      self.result
-      + Text(
-        inline.renderAttributedString(
-          baseURL: self.baseURL,
-          textStyles: self.textStyles,
-          softBreakMode: self.softBreakMode,
-          attributes: self.attributes
-        )
-      )
+    // Accumulate in AttributedString instead of concatenating Text
+    let attributedString = inline.renderAttributedString(
+      baseURL: self.baseURL,
+      textStyles: self.textStyles,
+      softBreakMode: self.softBreakMode,
+      attributes: self.attributes
+    )
+    self.attributedResult += attributedString
+  }
+  
+  private mutating func flushAccumulatedText() {
+    guard !self.attributedResult.characters.isEmpty else { return }
+    self.result = self.result + Text(self.attributedResult)
+    self.attributedResult = AttributedString()
   }
 }
